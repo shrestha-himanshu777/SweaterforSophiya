@@ -1,0 +1,75 @@
+.hidden {
+    display: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    background: #58b1ff;
+    overflow-x: hidden;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 8px;
+    border: none;
+    background: #d63031;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background: #b02324;
+}
+
+.container {
+    margin-top: 40px;
+    position: relative;
+    width: 650px;  
+    height: 700px; 
+}
+
+/* Snowflakes */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 14px;
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg);}
+    100% { transform: translateY(100vh) rotate(360deg);}
+}
+
+#sweater, #hoodie {
+    width: 600px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#friendPhoto {
+    position: absolute;
+    top: 260px; 
+    left: 51.5%;
+    transform: translateX(-50%) rotate(-3deg); 
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+    z-index: 3; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    pointer-events: none;
+    mix-blend-mode: hard-light;
+}

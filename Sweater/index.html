@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>GNG</title>
+<link rel="stylesheet" href="RSM.css">
+</head>
+<body>
+<p>TOO a tall cutiee pootatie with big eyes</p>
+<p><em>Just a little gift BAHAHHAHAHAHAH</em></p>
+<p><strong>Click below to see your sweater or hoodie 🎄❄️</strong></p>
+<button id="showSweater">Sweater🎄</button>
+<button id="showHoodie">Hoodie❄️</button>
+
+
+<div class="container">
+    <!-- Sweater -->
+    <img id="sweater" src="sweater.webp" class="hidden">
+    <!-- Hoodie -->
+    <img id="hoodie" src="hoodie.png" class="hidden">
+    <!-- Friend's photo -->
+    <img id="friendPhoto" src="friend.jpg" class="hidden">
+</div>
+
+<script>
+// Toggle sweater/hoodie
+const sweater = document.getElementById("sweater");
+const hoodie = document.getElementById("hoodie");
+const friendPhoto = document.getElementById("friendPhoto");
+
+document.getElementById("showSweater").onclick = () => {
+    sweater.classList.remove("hidden");
+    hoodie.classList.add("hidden");
+    friendPhoto.classList.remove("hidden"); // show photo only on sweater
+};
+
+document.getElementById("showHoodie").onclick = () => {
+    hoodie.classList.remove("hidden");
+    sweater.classList.add("hidden");
+    friendPhoto.classList.add("hidden"); // hide photo on hoodie
+};
+
+// Snowfall animation
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.textContent = '❄';
+    snowflake.style.left = Math.random() * window.innerWidth + 'px';
+    snowflake.style.fontSize = (10 + Math.random() * 20) + 'px';
+    snowflake.style.opacity = Math.random();
+    snowflake.style.animationDuration = (5 + Math.random() * 5) + 's';
+    document.body.appendChild(snowflake);
+    setTimeout(() => snowflake.remove(), 10000);
+}
+setInterval(createSnowflake, 300);
+</script>
+
+</body>
+</html>
